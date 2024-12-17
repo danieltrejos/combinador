@@ -13,5 +13,10 @@
             <p>Mensaje: {{ datos[1] }}</p>
         </section>
 
+        <section>
+            <p>Has cliz aqui en el siguiente enlace para descargar el archivo:</p>
+            <a href="{{ url_for('descargar_archivo', nombre_archivo ='salida.docx') }}">Descargar Archivo</a>
+        </section>
+
     </main>
 {% endblock %}
