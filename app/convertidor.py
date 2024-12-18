@@ -3,8 +3,6 @@ from docxtpl import DocxTemplate
 os.makedirs("app/outputs", exist_ok=True) """
 
 
-
-
 def convertir(nombre_doc,plantilla, contexto,):
     template = DocxTemplate(f"app/inputs/{plantilla}.docx")
     context = contexto

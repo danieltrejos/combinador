@@ -1,0 +1,13 @@
+{% extends 'base_documento.html' %}
+
+
+{% block main %}
+    <h1>Documento CDP CREADO</h1>
+    <p>Estos son los datos del CDP creado</p>
+
+    <ul>
+        {% for clave, valor in cdp_creado.items() %}
+            <li> {{clave}}: {{valor}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
