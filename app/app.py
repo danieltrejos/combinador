@@ -1,8 +1,14 @@
 from flask import Flask, render_template, send_from_directory, request
 from convertidor import convertir
+import os
 
 
+# Instancia de flask
 app = Flask(__name__)
+
+# Definir BASE_DIR como directorio base del proyecto
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
 
 @app.route('/')
 def home():
@@ -17,7 +23,7 @@ def convert():
     plantilla = "plantilla"
     datos = [nombre_doc, contexto, plantilla]
     # Llamar a la función que realiza la conversión y genera el documento final
-    convertir(nombre_doc, plantilla, contexto)
+    convertir(nombre_doc, plantilla, contexto, BASE_DIR)
     # Devolver la plantilla con los datos del documento generado
     return render_template('convertido.html', datos=datos)
 
